@@ -9,16 +9,20 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
-
+    //1用户模型关联表
+    public $table = 't_user';
+    //表2的主键
+    public $primaryKey = 'id';
     /**
      * The attributes that are mass assignable.
-     *
+     *3允许字段
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'password',
     ];
-
+    //4禁用时间戳 不填写会自动填充表里 create_at 和 updated_at
+    public $timestamps = false;
     /**
      * The attributes that should be hidden for arrays.
      *

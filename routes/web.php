@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+// 页面请求
+Route::get('user/add','UserController@add');
+//执行方法
+Route::post('user/store','UserController@store');
+
+//列表页面
+Route::get('user/index','UserController@index');
+
+//修改
+Route::get('user/edit/{id}','UserController@edit');
+
+Route::post('user/update','UserController@update');
+
+//删除
+Route::get('user/del/{id}','UserController@del');
